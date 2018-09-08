@@ -9,6 +9,7 @@ module.exports = class MenuController {
                 message: "Please choose from an option below: ",
                 choices: [
                     "Add new contact",
+                    "Reminder",
                     "Exit"
                 ]
             }
@@ -22,6 +23,9 @@ module.exports = class MenuController {
             switch(response.mainMenuChoice){
                 case "Add new contact":
                     this.addContact();
+                    break;
+                case "Reminder":
+                    this.remindMe();
                     break;
                 case "Exit":
                     this.exit();
@@ -45,6 +49,11 @@ module.exports = class MenuController {
         this.main();
     }
 
+    remindMe(){
+        return "Learning is a life-long pursuit";
+        this.main();
+    }
+
     exit(){
         console.log("Thanks for using AddressBloc!");
         process.exit();
@@ -53,4 +62,6 @@ module.exports = class MenuController {
     getContactCount(){
         return this.contacts.length;
     }
+
+
 }
